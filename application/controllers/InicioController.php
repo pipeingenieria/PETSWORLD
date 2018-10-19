@@ -62,5 +62,10 @@ class InicioController extends CI_Controller {
              $this->load->view('Layout/HeaderView');
              $this->load->view('peluqueriaview');
              $this->load->view('Layout/FooterView');
+        } 
+        public function Cuidados() {
+             $this->load->view('Layout/HeaderView');
+             $this->load->view('CuidadosView');
+             $this->load->view('Layout/FooterView');
         }
 }
