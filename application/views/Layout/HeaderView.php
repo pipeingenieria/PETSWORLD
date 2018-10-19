@@ -45,6 +45,11 @@
                                 <a class="dropdown-item text-dark" href="<?php echo base_url();?>/InicioController/razas">Nuestras Razas</a>
                             </div>
                         </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="<?php echo base_url();?>/InicioController/Cuidados">Cuidados</a>
+                        </li> 
+                        
                     </ul>         
 
                     <form class="form-inline my-2 my-lg-0">
