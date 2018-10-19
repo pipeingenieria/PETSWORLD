@@ -34,10 +34,6 @@ and open the template in the editor.
     box-shadow:5px 5px 5px lightgray;
     border-radius:20px;
 }
-.jumbo{
-    box-shadow:5px 5px 5px lightgray;
-    border-radius:50px;
-}
 .submit{
     background-color: #7B1FA2;
 }

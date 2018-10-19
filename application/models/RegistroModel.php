@@ -9,14 +9,12 @@ class RegistroModel extends CI_Model{
        public function  insertar($datos){
            $usuarios=array(
                "nombre"=> $datos["nombre"],
-               "apellido"=>$datos ['apellido'],
+               "Apellidos"=>$datos ['apellido'],
                 "pais"=>$datos ['pais'],
                 "departamento"=>$datos ['departamento'],
                 "ciudad"=>$datos ['ciudad'],
                 "telefono"=>$datos ['telefono'],
                 "email"=>$datos ['email'],
-               "usuario"=>$datos ['usuario'],
-               "password"=>$datos ['password'],
                
                );
            $this->db->insert("usuarios",$usuarios);
