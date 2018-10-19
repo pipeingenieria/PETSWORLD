@@ -8,9 +8,10 @@
                   <a  href="<?php echo base_url();?>/InicioController/perros">
                       <img src="<?php echo base_url();?>/assets/img/pug.jpg" alt="" width="150" height="150">
                   </a>
-                  <div class="desc">Perros</div>
                 </div>
-                    <div class="gallery">
+                  <div class="desc">Perros</div>
+            </div>
+                <div class="gallery">
                       <a target="_blank" href="<?php echo base_url();?>/InicioController/gatos">
                         <img src="<?php echo base_url();?>/assets/img/gato.jpg" alt="" width="150" height="150">
                       </a>
@@ -23,4 +24,5 @@
                       <div class="desc">Conejos</div>
                     </div> 
                 <div>
+            
 
