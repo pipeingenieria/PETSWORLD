@@ -41,3 +41,7 @@ and open the template in the editor.
     color:white;
 }
 
+.imagen-form{
+    box-shadow:5px 5px 5px lightgray;
+    border-radius:20px;
+}
