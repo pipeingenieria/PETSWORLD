@@ -33,6 +33,10 @@ class RegistroModel extends CI_Model{
                 $this->db->or_like('ciudad', $query);
                 $this->db->or_like('pais', $query);
                 $this->db->or_like('departamento', $query);
+                $this->db->or_like('telefono', $query);
+                $this->db->or_like('email', $query);
+                $this->db->or_like('usuario', $query);
+                $this->db->or_like('password', $query);
             }
             $this->db->order_by('nombre', 'DESC');
             return $this->db->get();
