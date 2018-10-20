@@ -113,3 +113,18 @@
                         </footer>
                     </form>
               </div>
+<!-- AJAX ------------------------------------>
+              <div class="container">
+			<br />
+			<br />
+			<br />
+			<h2 align="center">Listado de usuarios Registrados</h2><br />
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon">Buscar</span>
+					<input type="text" name="search_text" id="search_text" placeholder="Busqueda por cualquier campo" class="form-control" />
+				</div>
+			</div>
+			<br />
+			<div id="result"></div>
+		</div>

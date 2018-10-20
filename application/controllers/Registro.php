@@ -27,5 +27,55 @@ class Registro extends CI_Controller{
        //$query->$this->db->query();
                
    }
+
+   function fetch()
+	{
+		$output = '';
+		$query = '';
+		$this->load->model('RegistroModel');
+		if($this->input->post('query'))
+		{
+			$query = $this->input->post('query');
+		}
+		$data = $this->RegistroModel->fetch_data($query);
+		$output .= '
+		<div class="table-responsive">
+					<table class="table table-striped table-dark table-hover">
+						<tr>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Pais</th>
+							<th>Departamento</th>
+                            <th>Ciudad</th>
+                            <th>telefono</th>
+                            <th>E-mail</th>
+						</tr>
+		';
+		if($data->num_rows() > 0)
+		{
+			foreach($data->result() as $row)
+			{
+				$output .= '
+						<tr>
+							<td>'.$row->nombre.'</td>
+							<td>'.$row->apellido.'</td>
+							<td>'.$row->pais.'</td>
+							<td>'.$row->departamento.'</td>
+                            <td>'.$row->ciudad.'</td>
+                            <td>'.$row->telefono.'</td>
+                            <td>'.$row->email.'</td>
+						</tr>
+				';
+			}
+		}
+		else
+		{
+			$output .= '<tr>
+							<td colspan="5">No se Encontraron Datos</td>
+						</tr>';
+		}
+		$output .= '</table>';
+		echo $output;
+	}
 }
 

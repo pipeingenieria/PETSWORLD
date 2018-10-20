@@ -21,6 +21,22 @@ class RegistroModel extends CI_Model{
                );
            $this->db->insert("usuarios",$usuarios);
        }
+
+       function fetch_data($query)
+        {
+            $this->db->select("*");
+            $this->db->from("usuarios");
+            if($query != '')
+            {
+                $this->db->like('nombre', $query);
+                $this->db->or_like('apellido', $query);
+                $this->db->or_like('ciudad', $query);
+                $this->db->or_like('pais', $query);
+                $this->db->or_like('departamento', $query);
+            }
+            $this->db->order_by('nombre', 'DESC');
+            return $this->db->get();
+        }
       
 }
 
