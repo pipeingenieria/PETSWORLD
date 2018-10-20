@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="nombre">Usuario</label>
+                                    <label for="usuario">Usuario</label>
                                     <input type="text" name="usuario" class="form-control" id="usuario" aria-describedby="nombreHelp" placeholder="Ingrese nombre" required>
 
                                     <small id="nombreHelp" class="form-text text-muted">Tu usuario para login.</small>
