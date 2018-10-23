@@ -19,14 +19,7 @@ class Registro extends CI_Controller{
        $this->load->view("Layout/FooterView");
    }
    
-   public function getUser(){
-       $datos = $this->RegistroModel->GetUser();
-       $this->load->view("Layout/HeaderView");
-       $this->load->view("UsersView", $result);
-       $this->load->view("Layout/FooterView");
-       //$query->$this->db->query();
-               
-   }
+   
 
    function fetch()
 	{
@@ -48,7 +41,8 @@ class Registro extends CI_Controller{
 							<th>Departamento</th>
                             <th>Ciudad</th>
                             <th>telefono</th>
-                            <th>E-mail</th>
+							<th>E-mail</th>
+							<th>Edicion</th>
 						</tr>
 		';
 		if($data->num_rows() > 0)
@@ -63,7 +57,12 @@ class Registro extends CI_Controller{
 							<td>'.$row->departamento.'</td>
                             <td>'.$row->ciudad.'</td>
                             <td>'.$row->telefono.'</td>
-                            <td>'.$row->email.'</td>
+							<td>'.$row->email.'</td>
+							<td>'.base_url().'/</td>
+							<td>
+								<a href="'.base_url().'/Usuarios/Detalles"><button class="btn btn-warning">Detalles</button></a>
+							</td>
+
 						</tr>
 				';
 			}

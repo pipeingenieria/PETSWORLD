@@ -40,5 +40,31 @@ $(document).ready(function(){
 			load_data();
 		}
 	});
+
+	//-------------- AJAX Para enviar variables a Controllador
+
+	function ObtenerUser(query)
+	{
+		$.ajax({
+			url:"<?php echo base_url(); ?>Registro/fetch",
+			method:"POST",
+			data:{query:query},
+			success:function(data){
+				//$('#result').html(data);
+			}
+		})
+	}
+
+	$('#Detalle').onClick(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			ObtenerUser(search);
+		}
+		else
+		{
+			ObtenerUser();
+		}
+	});
 });
 </script>

@@ -118,7 +118,7 @@
 			<br />
 			<br />
 			<br />
-			<h2 align="center">Listado de usuarios Registrados</h2><br />
+			<h2 class="align-center">Listado de usuarios Registrados</h2><br />
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">Buscar</span>

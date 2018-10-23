@@ -22,10 +22,13 @@ class RegistroModel extends CI_Model{
            $this->db->insert("usuarios",$usuarios);
        }
 
+
+
        function fetch_data($query)
         {
             $this->db->select("*");
             $this->db->from("usuarios");
+            
             if($query != '')
             {
                 $this->db->like('nombre', $query);
@@ -41,6 +44,7 @@ class RegistroModel extends CI_Model{
             $this->db->order_by('nombre', 'DESC');
             return $this->db->get();
         }
+    
       
 }
 

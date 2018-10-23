@@ -52,10 +52,10 @@
                         
                     </ul>         
 
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2 " style="width:110px;" type="search" placeholder="Usuario">
-                        <input class="form-control mr-sm-2" style="width:110px;" type="search" placeholder="Contraseña">
-                        <a class="btn btn-primary my-2 my-sm-0 bg-ligthblue" href="#">Login</a>
+                    <form class="form-inline my-2 my-lg-0" action="<?php echo base_url(); ?>/Usuarios/Login" method="POST">
+                        <input class="form-control mr-sm-2 " name="usuario" id="usuario" style="width:110px;" type="search" placeholder="Usuario">
+                        <input class="form-control mr-sm-2" name="password" id="password" style="width:110px;" type="search" placeholder="Contraseña">
+                        <input type="submit" class="btn btn-primary my-2 my-sm-0 bg-ligthblue" name="Login">
                         <a class="btn btn btn-success my-2 my-sm-0 bg-ligthblue" id="registro" href="<?php echo base_url() ?>/InicioController/registro">Registro</a>
                     </form>
                 </div>
