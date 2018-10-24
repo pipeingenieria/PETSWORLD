@@ -6,7 +6,11 @@
  * and open the template in the editor.
  */
 class RegistroModel extends CI_Model{
-       public function  insertar($datos){
+
+    //----------Comienza el CRUD -----------------------------------------------
+
+    //----------------  CREATE  --------------------------------------------------
+       public function  insertar($datos){   
            $usuarios=array(
                "nombre"=> $datos["nombre"],
                "apellido"=>$datos ['apellido'],
@@ -21,6 +25,78 @@ class RegistroModel extends CI_Model{
                );
            $this->db->insert("usuarios",$usuarios);
        }
+
+       //-----
+
+       //----------  READ  ----------------------
+
+       public function ver()
+        {
+            $this->db->select("*");
+            $this->db->from("usuarios");
+
+            return $this->db->get();
+        }
+
+        public function detalle($query)
+        {
+            $this->db->select("*");
+            $this->db->from("usuarios");
+            $this->db->where("id=$query");
+
+            return $this->db->get();
+        }
+
+        //---
+
+        //--------------  UPDATE  -------------------------------------------------
+
+        public function update($id_usuario,$modificar="NULL",$email="NULL",$password="NULL",$nombre="NULL",$apellido="NULL"){
+            if($modificar=="NULL"){
+                $consulta=$this->db->query("SELECT * FROM usuarios WHERE id_usuario=$id_usuario");
+                return $consulta->result();
+            }else{
+              $consulta=$this->db->query("
+                  UPDATE usuarios SET email='$email', password='$password',
+                  nombre='$nombre', apellido='$apellido' WHERE id_usuario=$id_usuario;
+                      ");
+              if($consulta==true){
+                  return true;
+              }else{
+                  return false;
+              }
+            }
+        }
+
+        //---
+
+        //-------------  DELETE  ------------------------------------------------
+
+        public function eliminar($id_usuario){
+            $consulta=$this->db->query("DELETE FROM usuarios WHERE id_usuario=$id_usuario");
+            if($consulta==true){
+                return true;
+            }else{
+                return false;
+            }
+         }
+
+        //------------- Termina CRUD ---------------------------------------------
+
+
+       public function Login($login){
+        $usuario=$login['usuario'];
+        $password=$login['password'];
+        //Hacemos una consulta
+        $this->db->select("*");
+        $this->db->from("usuarios");
+        $this->db->where("usuario='$usuario' AND password=$password");
+
+         
+        //Devolvemos el resultado de la consulta
+        //var_dump ($this->db->get());
+        return $this->db->get();
+    }
 
 
 
@@ -44,6 +120,9 @@ class RegistroModel extends CI_Model{
             $this->db->order_by('nombre', 'DESC');
             return $this->db->get();
         }
+
+
+        
     
       
 }

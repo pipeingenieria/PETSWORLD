@@ -7,19 +7,7 @@
  */
 class RegistroModel extends CI_Model{
        
-    public function Login($login){
-        $usuario=$login['usuario'];
-        $password=$login['password'];
-        //Hacemos una consulta
-        $this->db->select("*");
-        $this->db->from("usuarios");
-        $this->db->where("usuario='$usuario' AND password=$password");
-
-         
-        //Devolvemos el resultado de la consulta
-        //var_dump ($this->db->get());
-        return $this->db->get();
-    }
+    
 
 
        

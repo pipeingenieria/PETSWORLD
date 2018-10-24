@@ -42,7 +42,21 @@ class InicioController extends CI_Controller {
 		$this->load->view('InicioSesionView');
                 //Se carga el Footer
                 $this->load->view('Layout/FooterView');
+        }
+        
+        public function Detalles()
+	{
+                //Se carga el Header
+                $this->load->view('Layout/HeaderView');
+                //Se carga el Contenido de el Body
+		$this->load->view('DetallesView');
+                //Se carga el Footer
+                $this->load->view('Layout/FooterView');
+                //$this->RegistroModel->insertar();
+               // echo 'Usuario  Registrado!!';
 	}
+
+
         public function preloader() {
              $this->load->view('Layout/HeaderView');
              $this->load->view('preloaderview');
