@@ -51,29 +51,27 @@ class RegistroModel extends CI_Model{
 
         //--------------  UPDATE  -------------------------------------------------
 
-        public function update($id_usuario,$modificar="NULL",$email="NULL",$password="NULL",$nombre="NULL",$apellido="NULL"){
-            if($modificar=="NULL"){
-                $consulta=$this->db->query("SELECT * FROM usuarios WHERE id_usuario=$id_usuario");
-                return $consulta->result();
-            }else{
+        public function editar($id,$departamento,$ciudad,$pais,$telefono,$email,$nombre,$apellido){
+            
               $consulta=$this->db->query("
-                  UPDATE usuarios SET email='$email', password='$password',
-                  nombre='$nombre', apellido='$apellido' WHERE id_usuario=$id_usuario;
+                  UPDATE usuarios SET email='$email', departamento='$departamento',
+                  nombre='$nombre', apellido='$apellido', pais='$pais', ciudad='$ciudad',
+                  telefono='$telefono' WHERE id=$id;
                       ");
               if($consulta==true){
                   return true;
               }else{
                   return false;
               }
-            }
+            
         }
 
         //---
 
         //-------------  DELETE  ------------------------------------------------
 
-        public function eliminar($id_usuario){
-            $consulta=$this->db->query("DELETE FROM usuarios WHERE id_usuario=$id_usuario");
+        public function eliminar($id){
+            $consulta=$this->db->query("DELETE FROM usuarios WHERE id=$id");
             if($consulta==true){
                 return true;
             }else{

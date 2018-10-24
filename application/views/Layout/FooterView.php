@@ -50,7 +50,7 @@ $(document).ready(function(){
 			method:"POST",
 			data:{query:query},
 			success:function(data){
-				$('#result2').html(data);
+				$('#result2').append(data);
 			}
 		})
 	}
