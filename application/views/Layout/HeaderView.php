@@ -49,7 +49,10 @@
 
                             <a class="nav-link" href="<?php echo base_url();?>/InicioController/Cuidados">Cuidados</a>
                         </li> 
-                        
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="<?php echo base_url();?>/InicioController/Admin">Administradores</a>
+                        </li> 
                     </ul>         
 
                     <form class="form-inline my-2 my-lg-0" action="<?php echo base_url(); ?>/Usuarios/Login" method="POST">

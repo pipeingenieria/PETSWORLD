@@ -56,6 +56,17 @@ class InicioController extends CI_Controller {
                // echo 'Usuario  Registrado!!';
 	}
 
+        public function Admin()
+	{
+                //Se carga el Header
+                $this->load->view('Layout/HeaderView');
+                //Se carga el Contenido de el Body
+		$this->load->view('AdminView');
+                //Se carga el Footer
+                $this->load->view('Layout/FooterView');
+                //$this->RegistroModel->insertar();
+               // echo 'Usuario  Registrado!!';
+	}
 
         public function preloader() {
              $this->load->view('Layout/HeaderView');

@@ -42,7 +42,7 @@ class RegistroModel extends CI_Model{
         {
             $this->db->select("*");
             $this->db->from("usuarios");
-            $this->db->where("id=$query");
+            $this->db->where("id='$query'");
 
             return $this->db->get();
         }

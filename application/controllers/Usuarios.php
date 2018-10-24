@@ -19,9 +19,10 @@ class Usuarios extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function getUser(){
-		$datos = $this->RegistroModel->Ver();
+		$datos['result'] = $this->RegistroModel->Ver();
 		$this->load->view("Layout/HeaderView");
-		$this->load->view("UsersView", $result);
+		$this->load->view("UsersView", $datos);
+		//Al
 		$this->load->view("Layout/FooterView");
 		//$query->$this->db->query();
 			
@@ -42,6 +43,34 @@ class Usuarios extends CI_Controller {
 		 }else{
 			 echo("Datos incorrectos");
 		 }
-		     
-	 }
+		}
+
+		 function LoginAdmin(){
+			$login=$_POST;
+			$this->load->model('RegistroModel');
+			$data=$this->RegistroModel->Login($login);
+			if($data->num_rows()!==0){
+				foreach($data->result() as $row)
+				{
+								
+					var_dump ($data);
+				}
+			
+			}else{
+				echo("Datos incorrectos");
+			}
+		   }
+
+		   function detalle(){
+			$datos=$_GET;
+			var_dump($datos);
+			$this->RegistroModel->detalle($datos);
+			//Cargo Header
+			$this->load->view("Layout/HeaderView");
+			//Cargo la vista
+			$this->load->view("RegistroView");
+			//Cargo Footer
+			$this->load->view("Layout/FooterView");
+		}
 }
+

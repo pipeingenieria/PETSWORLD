@@ -16,6 +16,7 @@
 $(document).ready(function(){
 
 	load_data();
+	$('#result').hide();
 
 	function load_data(query)
 	{
@@ -65,6 +66,33 @@ $(document).ready(function(){
 		{
 			load_data2();
 		}
+
+	function loginAdmin(usuario, password)
+	{
+		$.ajax({
+			url:"<?php echo base_url(); ?>Usuarios/Login",
+			method:"POST",
+			data:{usuario:usuario,password:password},
+			success:function(){
+				$('#result').show();
+				alert ("HOLA");
+			}
+		})
+	}
+
+	
+	$('#btnAdmin').click(function(){
+		var usuario = $('#usuario').val();
+		var password = $('#password').val();
+		
+		loginAdmin(usuario, password);
+		
+	});
+
+	$("#prueba").val($('#search_text2').val());
+
 	
 });
+
+//$(selector).show(duracion,callback);
 </script>
