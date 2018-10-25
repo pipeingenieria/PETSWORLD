@@ -29,20 +29,20 @@ class Usuarios extends CI_Controller {
 	    }
 	 
 	    function Login(){
-		 $login=$_POST;
-		 $this->load->model('RegistroModel');
-		 $data=$this->RegistroModel->Login($login);
-		 
-		 if($data->num_rows()!==0){
-			 foreach($data->result() as $row)
-			 {
-							 
-				 var_dump ($data);
-			 }
-		 
-		 }else{
-			 echo("Datos incorrectos");
-		 }
+			$login=$_POST;
+			$this->load->model('RegistroModel');
+			$data=$this->RegistroModel->Login($login);
+			
+			if($data->num_rows()!==0){
+				foreach($data->result() as $row)
+				{
+								
+					var_dump ($data);
+				}
+			
+			}else{
+				echo("Datos incorrectos");
+			}
 		}
 
 		 function LoginAdmin(){
@@ -59,18 +59,33 @@ class Usuarios extends CI_Controller {
 			}else{
 				echo("Datos incorrectos");
 			}
-		   }
+		}
 
 		   function detalle(){
-			$datos=$_GET;
-			var_dump($datos);
-			$this->RegistroModel->detalle($datos);
-			//Cargo Header
-			$this->load->view("Layout/HeaderView");
-			//Cargo la vista
-			$this->load->view("RegistroView");
-			//Cargo Footer
-			$this->load->view("Layout/FooterView");
-		}
+				$datos=$_GET['id'];
+				var_dump($datos);
+				$data=$this->RegistroModel->detalle($datos);
+				foreach($data->result() as $row)
+					{
+									
+						$datos = array("nombre" => $row->nombre, 
+										"apellido" => $row->apellido,
+										"pais" => $row->pais,
+										"departamento" => $row->departamento,
+										"ciudad" => $row->ciudad,
+										"telefono" => $row->telefono,
+										"email" => $row->email,
+										"usuario" => $row->usuario,
+										"password" => $row->password  );
+					}
+				
+				
+				//Cargo Header
+				$this->load->view("Layout/HeaderView");
+				//Cargo la vista
+				$this->load->view("DetallesView",compact("datos"));
+				//Cargo Footer
+				$this->load->view("Layout/FooterView");
+			}
 }
 
