@@ -98,4 +98,15 @@ class InicioController extends CI_Controller {
              $this->load->view('EjerciciosView');
              $this->load->view('Layout/FooterView');
         }
+        public function nutricion() {
+                $this->load->view('Layout/HeaderView');
+                $this->load->view('nutricionview');
+                $this->load->view('Layout/FooterView');
+        }
+        public function preguntas() {
+                //$this->load->view('Layout/HeaderView');
+                $this->load->view('preguntasview');
+                $this->load->view('Layout/FooterView');
+        }
+       
 }

@@ -26,7 +26,7 @@
                               <a href="#"><img class="card-img-top" src="<?php echo base_url();?>/assets/img/ejercicios.jpg" alt=""></a>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">Ejercicios basicos para el bienestar de las mascotas</a>
+                                  <a href="<?php echo base_url();?>/InicioController/ejercicios">Ejercicios basicos para el bienestar de las mascotas</a>
                                 </h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                               </div>
@@ -41,7 +41,7 @@
                               <a href="#"><img class="card-img-top" src="<?php echo base_url();?>/assets/img/nutricion.jpg" alt=""></a>
                               <div class="card-body">
                                 <h4 class="card-title">
-                                  <a href="#">Tips para la sana nutricion de tus Pets</a>
+                                  <a href="<?php echo base_url();?>/InicioController/nutricion">Tips para la sana nutricion de tus Pets</a>
                                 </h4>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                               </div>

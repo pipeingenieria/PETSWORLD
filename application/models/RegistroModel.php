@@ -71,12 +71,17 @@ class RegistroModel extends CI_Model{
         //-------------  DELETE  ------------------------------------------------
 
         public function eliminar($id){
-            $consulta=$this->db->query("DELETE FROM usuarios WHERE id=$id");
-            if($consulta==true){
+            if(!$id==""){
+                 /* $this->db->delete("*");
+            $this->db->from("usuarios");
+            $this->db->where("id=$id"); */
+            $this->db->where('id',$id);
+            return $this->db->delete('usuarios');
+            $consulta=$this->db->delete('usuarios');
                 return true;
-            }else{
-                return false;
             }
+            return false;
+            
          }
 
         //------------- Termina CRUD ---------------------------------------------
@@ -115,7 +120,7 @@ class RegistroModel extends CI_Model{
                 $this->db->or_like('usuario', $query);
                 $this->db->or_like('password', $query);
             }
-            $this->db->order_by('nombre', 'DESC');
+            $this->db->order_by('id', 'DESC');
             return $this->db->get();
         }
 

@@ -87,5 +87,24 @@ class Usuarios extends CI_Controller {
 				//Cargo Footer
 				$this->load->view("Layout/FooterView");
 			}
+
+			function eliminar(){
+				$datos=$_GET['id'];
+				$data=$this->RegistroModel->eliminar($datos);
+				var_dump($data);
+				if($data==true){
+					$message = "Usuario Eliminado Correctamente";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}else{
+					$message = "El Usuario No Existe";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
+				$this->load->view("Layout/HeaderView");
+				//Cargo la vista
+				$this->load->view("DetallesView");
+				//Cargo Footer
+				$this->load->view("Layout/FooterView");
+
+			}
 }
 

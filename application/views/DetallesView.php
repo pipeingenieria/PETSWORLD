@@ -14,7 +14,7 @@
 			<div id="result2"></div>
 		</div>
 
-<div class="jumbotron container-fluid col-10 align-center my-4 jumbo administradores">
+<div class="jumbotron container-fluid col-10 align-center my-4 jumbo administradores" id="administradores">
                    <div class="container-fluid align-center" style="text-align: center;">
                         <h1 class="display-4 align-center"> Administradores </h1>
                         <div class="container-fluid img-form">
@@ -23,7 +23,10 @@
                         <p class="lead">Formulario para tener aceeso a todos nuestros servicios</p>
                         <hr class="my-4">
                     </div>
-                
+            <?php        
+                if(isset($datos["nombre"])){
+                ?>
+
                     <form class="my-5" action="<?php echo base_url() ?>/Registro/InsertUser" method="POST" >
                         <div class="row">
                             <div class="col">
@@ -128,4 +131,7 @@
                                    <button type="" data-dismiss="modal" class="btn btn-primary" value="cancelar" >Cancelar</button>                              
                         </footer>
                     </form>
+            <?php
+                }
+            ?>
               </div>		

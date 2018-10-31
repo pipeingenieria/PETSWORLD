@@ -9,7 +9,7 @@
 class Registro extends CI_Controller{
    public function InsertUser(){
        $datos=$_POST;
-       var_dump($datos);
+       //var_dump($datos);
        $this->RegistroModel->insertar($datos);
        //Cargo Header
        $this->load->view("Layout/HeaderView");
@@ -117,10 +117,10 @@ class Registro extends CI_Controller{
 							<td>'.$row->email.'</td>
 							
 							<td>
-								<a href="'.base_url().'/Usuarios/detalle?id='.$row->id.'"><button class="btn btn-warning">Editar</button></a>
+								<a href="'.base_url().'/Usuarios/detalle?id='.$row->id.'" id="Editar"><button class="btn btn-warning">Editar</button></a>
 							</td>
 							<td>
-								<a href="'.base_url().'/InicioController/Detalles?id='.$row->id.'"><button class="btn btn-warning">Eliminar</button></a>
+								<a href="'.base_url().'/usuarios/eliminar?id='.$row->id.'"><button class="btn btn-warning">Eliminar</button></a>
 							</td>
 
 						</tr>
