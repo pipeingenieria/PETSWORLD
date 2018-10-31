@@ -56,9 +56,9 @@
 						<ul class="list-unstyled list-inline text-center">
 							<li class="list-inline-item">
 								<h5>Siguenos:</h5>
-								<a target="blank" href="https://www.facebook.com/henaocristian"</a>
+								<a target="blank" href="https://www.facebook.com/henaocristian">
 								<img  src="<?php echo base_url();?>/assets/img/logof.png" width="50px" height="50px">
-								<a href="https://www.facebook.com/henaocristian"</a>
+								<a href="https://www.facebook.com/henaocristian">
 								<img src="<?php echo base_url();?>/assets/img/twitter.jpg" width="50px" height="50px">
 							</li>         
 						</ul>
@@ -82,6 +82,13 @@ $(document).ready(function(){
 
 	load_data();
 	$('#result').hide();
+
+//---------------------  OBTENER SERVICIOS  --------
+	
+	
+		
+	$("#ValorServicio").val($('#Cortepelo').val());
+	//$("#ValorServicio").val("");
 	//$('#result').hide();
 
 	function load_data(query)
@@ -156,6 +163,10 @@ $(document).ready(function(){
 	});
 
 	$("#prueba").val($('#search_text2').val());
+
+	
+	
+
 
 	
 });
